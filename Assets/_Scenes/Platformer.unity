@@ -7542,7 +7542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1290099564353206163, guid: 21be60da9c0455248a3b3651d116cfce, type: 3}
       propertyPath: fireDelay
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1290099564353206169, guid: 21be60da9c0455248a3b3651d116cfce, type: 3}
       propertyPath: m_Name

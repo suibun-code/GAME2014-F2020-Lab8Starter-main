@@ -109,12 +109,13 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 12288
+      m_Bits: 14080
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
   colliders: []
+  direction: {x: 0, y: 0, z: 0}
 --- !u!50 &7795625368583098000
 Rigidbody2D:
   serializedVersion: 4
