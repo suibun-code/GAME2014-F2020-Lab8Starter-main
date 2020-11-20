@@ -17,7 +17,7 @@ public class BulletController : MonoBehaviour, IApplyDamage
     {
         {
             boxCollider2D = GetComponent<BoxCollider2D>();
-            direction = Vector3.up;
+            //direction = Vector3.up;
         }
     }
 
@@ -54,20 +54,6 @@ public class BulletController : MonoBehaviour, IApplyDamage
             BulletManager.Instance().ReturnBullet(gameObject);
         }
     }
-
-    // public void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     //Debug.Log(other.gameObject.name);
-    //     switch (other.gameObject.tag)
-    //     {
-    //         case "Enemy":
-    //             BulletManager.Instance().ReturnBullet(gameObject);
-    //             break;
-    //         case "Player":
-    //             BulletManager.Instance().ReturnBullet(gameObject);
-    //             break;
-    //     }
-    // }
 
     public int ApplyDamage()
     {
