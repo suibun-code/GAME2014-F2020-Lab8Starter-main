@@ -26,6 +26,10 @@ public class OpossumBehaviour : MonoBehaviour
 
     public LOS opossumLOS;
 
+    [Header("Bullet Firing")]
+    public Transform bulletSpawn;
+    public float fireDelay;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,24 +40,34 @@ public class OpossumBehaviour : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(_hasLOS())
+        if (_hasLOS())
         {
+            _FireBullet();
             Debug.Log("Opossum can see the player!");
         }
-        
+
         _LookInFront();
         _LookAhead();
         _Move();
+    }
+
+    private void _FireBullet()
+    {
+        // delay bullet firing 
+        if (Time.frameCount % fireDelay == 0 && BulletManager.Instance().HasBullets())
+        {
+            BulletManager.Instance().GetBullet(bulletSpawn.position);
+        }
     }
 
     private bool _hasLOS()
     {
         if (opossumLOS.colliders.Count > 0)
         {
-                    if (opossumLOS.collidesWith.gameObject.name == "Player" && opossumLOS.colliders[0].gameObject.name == "Player")
-        {
-            return true;
-        }
+            if (opossumLOS.collidesWith.gameObject.name == "Player" && opossumLOS.colliders[0].gameObject.name == "Player")
+            {
+                return true;
+            }
         }
 
         return false;
@@ -68,8 +82,8 @@ public class OpossumBehaviour : MonoBehaviour
             {
                 if (!onRamp && transform.rotation.z == 0.0f)
                 {
-                        _FlipX();
-   
+                    _FlipX();
+
                 }
 
                 rampDirection = RampDirection.DOWN;
@@ -119,10 +133,10 @@ public class OpossumBehaviour : MonoBehaviour
             {
                 if (rampDirection == RampDirection.UP)
                 {
-                  rigidbody2D.AddForce(Vector2.up * runForce * 0.5f * Time.deltaTime);
+                    rigidbody2D.AddForce(Vector2.up * runForce * 0.5f * Time.deltaTime);
                 }
                 else
-                { 
+                {
                     rigidbody2D.AddForce(Vector2.down * runForce * 0.25f * Time.deltaTime);
                 }
 
@@ -132,7 +146,7 @@ public class OpossumBehaviour : MonoBehaviour
             {
                 StartCoroutine(Normalize());
             }
-            
+
 
             rigidbody2D.velocity *= 0.90f;
         }
@@ -144,7 +158,7 @@ public class OpossumBehaviour : MonoBehaviour
         {
             _FlipX();
         }
-       
+
     }
 
     IEnumerator Rotate()

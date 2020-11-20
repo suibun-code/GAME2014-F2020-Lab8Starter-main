@@ -10,6 +10,8 @@ TagManager:
   - Ramps
   - Fire
   - Opossum
+  - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -24,7 +26,7 @@ TagManager:
   - Ramps
   - Enemy
   - Player
-  - 
+  - Bullet
   - 
   - 
   - 

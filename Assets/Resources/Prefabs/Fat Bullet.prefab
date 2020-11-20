@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7795625368583098001}
   - component: {fileID: 7795625368583098000}
   - component: {fileID: 7795625368583097999}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Fat Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   verticalSpeed: 4
-  verticalBoundary: 5.1
-  bulletManager: {fileID: 0}
+  verticalBoundary: 50
+  damage: 0
 --- !u!50 &7795625368583098000
 Rigidbody2D:
   serializedVersion: 4

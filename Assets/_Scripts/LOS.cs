@@ -9,12 +9,12 @@ public class LOS : MonoBehaviour
     public ContactFilter2D contactFilter;
     public List<Collider2D> colliders;
 
-    private BoxCollider2D LOSCollider;
+    private PolygonCollider2D LOSCollider;
 
     // Start is called before the first frame update
     void Start()
     {
-        LOSCollider = GetComponent<BoxCollider2D>();
+        LOSCollider = GetComponent<PolygonCollider2D>();
     }
 
     // Update is called once per frame
